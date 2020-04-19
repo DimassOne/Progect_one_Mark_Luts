@@ -3,15 +3,20 @@ class Person:
         self.name = name
         self.job = job
         self.pay = pay
+    def lastName(self):
+        return self.name.split()[-1]
+    def giveRaise(self, percent):
+        self.pay = int(self.pay*(1+percent))
 
 
 if __name__ == '__main__':
     bob = Person('Bobbi')
-    jim = Person('Jimmi','Svarnoy',45000)
+    sue = Person('Jimmi','Svarnoy',45000)
     print(bob.name, bob.job, bob.pay)
-    print(jim.name, jim.job, jim.pay)
-    jim.pay *=1.3
-    print('%.3f' % jim.pay)
+    print(sue.name, sue.job, sue.pay)
+    print(bob.lastName(), sue.lastName())
+    sue.giveRaise(.10)
+    print(sue.pay)
 
 
 
