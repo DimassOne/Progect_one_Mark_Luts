@@ -7,16 +7,18 @@ class Person:
         return self.name.split()[-1]
     def giveRaise(self, percent):
         self.pay = int(self.pay*(1+percent))
+    def __repr__(self):
+        return f"[Person: {self.name}, Зарплата: {self.pay}]"#'[Person: %s, %s]' % (self.name, self.pay)
 
 
 if __name__ == '__main__':
-    bob = Person('Bobbi')
-    sue = Person('Jimmi','Svarnoy',45000)
-    print(bob.name, bob.job, bob.pay)
-    print(sue.name, sue.job, sue.pay)
+    bob = Person('Dmitrii Rogonian')
+    sue = Person('Vlad Rogonian','Svarnoy',45000)
+    print(bob)
+    print(sue)
     print(bob.lastName(), sue.lastName())
     sue.giveRaise(.10)
-    print(sue.pay)
+    print(sue)
 
 
 
