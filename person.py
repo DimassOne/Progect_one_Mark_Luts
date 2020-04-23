@@ -1,5 +1,6 @@
-ЗАКОНЧИЛ КНИГУ НА 71 СТРАНИЦЕ
-class Person:
+#ЗАКОНЧИЛ КНИГУ НА 71 СТРАНИЦЕ
+from classtools import AttrDisplay
+class Person(AttrDisplay):
     def __init__(self, name, job=None, pay=0):
         self.name = name
         self.job = job
@@ -8,8 +9,8 @@ class Person:
         return self.name.split()[-1]
     def giveRaise(self, percent):
         self.pay = int(self.pay*(1+percent))
-    def __repr__(self):
-        return f"[Person: {self.name}, Зарплата: {self.pay}]"#'[Person: %s, %s]' % (self.name, self.pay)
+##    def __repr__(self):
+##        return f"[Person: {self.name}, Зарплата: {self.pay}]"#'[Person: %s, %s]' % (self.name, self.pay)
     
 class Manager(Person):
     def __init__(self, name, pay):
